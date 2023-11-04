@@ -1,0 +1,30 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %} Registration {% endblock %}
+{% block content%}
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+         <h1  style="font-family:monospace; color:SlateBlue;text-align:center">Registration</h1>
+         {% for msg in massages %}
+               <div class="alert alert-info" role="alert">{{msg}}</div>
+         {% endfor %}
+
+        <div style="background-color:Tomato">
+            <form name="r_form" class="form-control" method="post" action="{% url 'register' %}" enctype="multipart/form-data" onsubmit="return Validation()">
+                {% csrf_token %}
+                {{form.as_p}}
+                <label>Password</label>
+                <input class="form-control" type="password" name="psd"><br>
+                 <label>Confirm password</label>
+                <input class="form-control" type="password" name="cpsd">
+
+                <div style="text-align:center"><button type="submit" class="btn btn-success">submit</button></div>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+{% endblock %}

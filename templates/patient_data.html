@@ -1,0 +1,27 @@
+{% extends 'base1.html' %}
+{% load static %}
+{% block title %} Login {% endblock %}
+{% block content%}
+<table id="example" class="table table-striped" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Address</th>
+                <th>Contact</th>
+            </tr>
+        </thead>
+        <tbody>
+          {% for i in pat %}
+            <tr>
+                <td><a href="{% url 'pat_record' i.id %}">{{i.name}}</a></td>
+                <td>{{i.age}}</td>
+                <td>{{i.address}}</td>
+                <td>{{i.mobile}}</td>
+
+            </tr>
+        {% endfor %}
+        </tbody>
+</table>
+
+{% endblock %}

@@ -1,0 +1,5 @@
+li:hover{
+    background-color:darkblue;
+    text-decoration:underline;
+    border-radius: 10px;
+}
